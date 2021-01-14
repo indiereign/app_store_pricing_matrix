@@ -33,7 +33,7 @@ class AppStorePricingMatrix
     def initialize(hash)
       @stem   = Integer(hash['tierStem'])
       @name   = hash['tierName']
-      @prices = hash['pricingInfo'].map{|i| Price.new(i) }
+      @prices = hash['pricingInfo'].map{|i| AppStorePrice.new(i) }
     end
 
     def inspect
@@ -50,7 +50,7 @@ class AppStorePricingMatrix
     end
   end
 
-  class Price
+  class AppStorePrice
     attr_accessor :country, :country_code, :currency_symbol, :currency_code,
       :wholesale_price, :retail_price, :formatted_retail_price, :formatted_wholesale_price
 
