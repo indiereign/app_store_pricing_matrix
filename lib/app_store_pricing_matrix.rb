@@ -25,6 +25,10 @@ class AppStorePricingMatrix
     def find_by(tier: nil, country: nil)
       tiers.find{|i| i.stem == tier }.prices.find{|price| price.country_code == country }
     end
+
+    def find_by_currency_code(tier: nil, currency_code: nil)
+      tiers.find{|i| i.stem == tier }.prices.find{|price| price.currency_code == currency_code }
+    end
   end
 
   class Tier
